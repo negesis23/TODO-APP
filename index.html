@@ -4,21 +4,11 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>TODO APP</title>
- <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+ <link rel="icon" href="favicon.png" type="image/png" sizes="any">
  <link rel="apple-touch-icon" href="apple-touch-icon.png">
- <script type="importmap">
-  {
-   "imports": {
-    "@arrow-js/core": "https://cdn.skypack.dev/pin/@arrow-js/core@v1.0.0-alpha.9-P2IatyrHunLGX6est03o/mode=imports,min/optimized/@arrow-js/core.js",
-    "@gabrielfins/ripple-effect": "https://cdn.skypack.dev/pin/@gabrielfins/ripple-effect@v1.0.5-8zoNJohYr1lAJIGMxRXa/mode=imports,min/optimized/@gabrielfins/ripple-effect.js",
-    "sortablejs": "https://cdn.skypack.dev/pin/sortablejs@v1.15.0-sOufiU7NJDruQKBTNnXC/mode=imports,min/optimized/sortablejs.js"
-   }
-  }
- </script>
  <script type="module" src="https://cdn.skypack.dev/pin/twind@v0.16.19-CaNDOlA4Nfo7ponDzANK/mode=imports,min/optimized/twind/shim.js"></script>
  <script type="twind-config">
   {
-   "hash": true,
    "theme": {
     "colors": {
      "primary": "#F2F2F2",
@@ -38,14 +28,13 @@
 </head>
 <body class="bg-base text-base-content h-full">
  <div id="root" class="p-4 flex flex-col gap-4 h-full"></div>
-
  <script type="module">
   import {
    html,
    reactive,
    watch
-  } from '@arrow-js/core';
-  import '@gabrielfins/ripple-effect';
+  } from 'https://cdn.skypack.dev/pin/@arrow-js/core@v1.0.0-alpha.9-P2IatyrHunLGX6est03o/mode=imports,min/optimized/@arrow-js/core.js';
+  import 'https://cdn.skypack.dev/pin/@gabrielfins/ripple-effect@v1.0.5-8zoNJohYr1lAJIGMxRXa/mode=imports,min/optimized/@gabrielfins/ripple-effect.js';
 
   const data = reactive({
    todos: JSON.parse(localStorage.todos || "[]")
@@ -72,7 +61,7 @@
    }
   }}">
   <input type="text" placeholder="What do you need to do?" class="h-12 w-full px-4 py-2 outline-none rounded-sm bg-surface ring-2 ring-inset ring-surface focus:(ring-border)" required>
-  <button type="submit" class="btn btn-primary">
+  <button type="submit" class="btn btn-primary btn-square">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
   <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
   </svg>
